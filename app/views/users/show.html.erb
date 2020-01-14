@@ -1,0 +1,12 @@
+<h1> Show User's</h1>
+ <style>
+ 	* {
+    background-color: #f0f5f5;
+  }
+ </style>
+Firstname: <%= @user.first_name %><br/><br/>
+Lastname: <%= @user.last_name %><br/><br/>
+Age : <%= @user.age %><br/><br/>
+Mobile Number : <%= @user.mobile_number %><br/><br/>
+Enter Email/Gmail : <%= @user.email %><br/><br/>
+<%= button_to "Back", users_path , method: :get %>

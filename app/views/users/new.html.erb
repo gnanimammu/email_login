@@ -1,0 +1,20 @@
+
+	<br/><br/>
+ Create User : <br/><br/>
+ <style>
+ 	* {
+    background-color: #f0f5f5;
+  }
+ </style>
+<%= form_for @user do |user| %>
+    Firstname: <%= user.text_field :first_name %><br/><br/>
+    Lastname: <%= user.text_field :last_name %><br/><br/>
+    Age : <%= user.number_field :age %><br/><br/>
+    Mobile Number : <%= user.number_field :mobile_number %><br/><br/>
+    Enter Email/Gmail : <%= user.email_field :email %><br/><br/>
+
+<%= user.submit %>
+<%= button_to"cancel",users_path,method: :get %><br/><br/>
+
+<%= button_to "Back", users_path , method: :get %>
+<% end %>

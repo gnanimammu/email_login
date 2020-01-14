@@ -1,0 +1,47 @@
+<h1> User's index </h1>
+
+<style>
+  * {
+    background-color: #e6fff7;
+  }
+  h1{
+    text-align: center;
+  }
+  
+  table {
+    margin-left:320px;
+  }
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+</style>
+<table>
+  <div class="title">
+<th><strong>First_name:</strong></th>
+<th><strong>Last_name:</strong></th>
+<th><strong>Age:</strong>
+<th><strong>Email:</strong>
+<th><strong>Mobile Number:</strong></th><br/>
+<th></th><br/>
+<th></th>
+<th> </th></div><br/>
+<% @users.each do |user| %>
+ <tr>
+    <th><%= user.first_name%></th>
+    <th><%= user.last_name%></th>
+    <th><%= user.age%></th>
+    <th><%= user.email%></th>
+    <th><%= user.mobile_number%></th>
+    <th><%= link_to "show", user_path(user) %></th>
+    <th><%= link_to "edit", edit_user_path(user) %></th>
+    <th><%= link_to "delete", {:controller => :users, :action => 'destroy', :id => user.id }, :method => :delete, data: { confirm: 'Are you sure?' }%></th>
+  </tr>
+<% end %>
+<br/><br/>
+<div class=.btn">
+<%= button_to "Add New User", new_user_path , method: :get %><br/>
+</div>
+
+  

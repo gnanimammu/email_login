@@ -1,0 +1,5 @@
+<h1> Destroy User</h1>
+<label for="" username<="" label=""><br>
+Enter Mobile Number:<input type="text" name="Mobile Number" placeholder="mobile_number" id"mobile_number"="" required="">
+<br><br>
+<%= button_to "delete", {:controller => :users, :action => 'destroy', :id => users.id }, :method => :delete %>
